@@ -3,4 +3,4 @@ project(summer_coding)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(summer_coding lq_1389.cpp)
+add_executable(summer_coding test.cpp)
