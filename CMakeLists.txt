@@ -3,4 +3,4 @@ project(summer_coding)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(summer_coding cf_1037_E.cpp)
+add_executable(summer_coding lq_3683.cpp)
