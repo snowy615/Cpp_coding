@@ -1,3 +1,4 @@
+//last test case n = n+1 out of range. Solved problem using min()
 #include <iostream>
 using namespace std;
 int s[200005];
