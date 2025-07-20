@@ -1,42 +1,33 @@
 #include <iostream>
-#include <algorithm>
+#include <vector>
 using namespace std;
 
-//A = 0 C = 1 G = 2 T = 3
+string a;
+int res;
+vector<int> s(2000005, 0); // initialize vector with n+1 zeros
 
-char in_c[4] = {'A', 'C', 'G', 'T'};
-
-int a[1010], b[1010];
-//int need[4] = {0, 0 ,0, 0};
-int extra[4] = { 0, 0 ,0, 0};
-int main(){
-    int n;
-    int cnt=0;
+int main() {
+    int n, m;
     cin >> n;
-    string s1, s2;
-    cin >> s1;
-    cin >> s2;
-    for (int i = 0; i<n; i++){
-        int idx = find(in_c, in_c+4, s1[i]) - in_c;
-        a[i] = idx;
-        //cout << a[i] << " ";
-        int bidx = find(in_c, in_c+4, s2[i]) - in_c;
-        b[i] = bidx;
-        //cout << b[i] << "\n";
+    cin >> a;
 
-        if (a[i]+b[i] != 3){
-            //cout << "\nin " << a[i] << " " << b[i] << "\n";
-            //cout << need[0] << " " << need[1] << " " << need[2] << " " << need[3] << "\n";
-            //cout << extra[0] << " " << extra[1] << " " << extra[2] << " " << extra[3] << "\n";
-            if (extra[3-a[i]]>0) {
-                extra[3-a[i]] --;
-                continue;
-            }else{
-                extra[a[i]] ++;
-                cnt += 1;
-            }
-
+    for (int i = 1; i <= n; i++) {
+        s[i] = s[i - 1];
+        if (i < n && a[i - 1] == '1' && a[i] == '0') {
+            s[i]++;
         }
     }
-    cout << cnt;
+
+    cin >> m;
+    int l, r;
+    for (int i = 0; i < m; i++) {
+        cin >> l >> r;
+        res = s[r] - s[l - 1];
+
+        if (r < n && a[r - 1] == '1' && a[r] == '0') {
+            res--;
+        }
+
+        cout << res << "\n";
+    }
 }

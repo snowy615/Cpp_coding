@@ -1,4 +1,3 @@
-//passed 9/10 cases
 #include <iostream>
 using namespace std;
 int s[200005];
@@ -13,17 +12,17 @@ int main(){
     for (int i = 1; i<=n; i++){
         s[i] = s[i-1];
         if (i < n && stoi(a.substr(i-1, 1)) == 1 && stoi(a.substr(i, 1))==0) s[i] ++;
-        //cout << s[i] << " ";
+//        cout << s[i] << " ";
     }
-    //cout << "\n";
+//    cout << "\n";
     cin >> m;
     int l, r;
     for (int i = 1; i<=m; i++){
         cin >> l >> r;
-        res = s[r] - s[l-1];
+        res = s[min(r, n)] - s[l-1];
         //if (r<n) cout << stoi(a.substr(r-1, 1)) << " " << stoi(a.substr(r, 1)) << "\n";
         if (r<n && stoi(a.substr(r-1, 1)) == 1 && stoi(a.substr(r, 1)) == 0) {
-            //cout << "in";
+//            cout << "in";
             res --;
         }
         cout << res << "\n";
