@@ -1,14 +1,10 @@
 # ninja log v6
-5	522	1752820731723205046	CMakeFiles/summer_coding.dir/lq_3683.cpp.o	fc582e9e540a3251
+9	999	1753031173957041513	CMakeFiles/summer_coding.dir/lq_3683.cpp.o	fc582e9e540a3251
 0	752	1752962765549899930	CMakeFiles/summer_coding.dir/lq_test_1.6.cpp.o	73dfc56e8c5ed0e8
-806	953	1753030572258558443	summer_coding	2ac11999e84480c0
+999	1149	1753031174947430870	summer_coding	cd8e53c75ca838d9
 10	806	1753030571462595017	CMakeFiles/summer_coding.dir/lq_test_1.7.cpp.o	d70dd825b2c4c431
 16	935	1753030113970400569	CMakeFiles/summer_coding.dir/main.cpp.o	14addec3104c53f0
 6	902	1752961631115216712	CMakeFiles/summer_coding.dir/lq_test_1.5.cpp.o	18252a1b148cffa6
 1	845	1752968641476376520	CMakeFiles/summer_coding.dir/lq_test_bug_1.7.cpp.o	fd20d21db93eb8cc
-2	767	1753030929880311032	CMakeFiles/summer_coding.dir/lq_3683.cpp.o	fc582e9e540a3251
-771	919	1753030930649244924	summer_coding	cd8e53c75ca838d9
-8	1016	1753031064387244959	CMakeFiles/summer_coding.dir/lq_3683.cpp.o	fc582e9e540a3251
-1016	1215	1753031065395117067	summer_coding	cd8e53c75ca838d9
-9	999	1753031173957041513	CMakeFiles/summer_coding.dir/lq_3683.cpp.o	fc582e9e540a3251
-999	1149	1753031174947430870	summer_coding	cd8e53c75ca838d9
+1	770	1753038849030184416	CMakeFiles/summer_coding.dir/lq_3404.cpp.o	bb8937fd8f6fbb65
+776	1015	1753038849805361034	summer_coding	d266ebcbf07e1f2c
