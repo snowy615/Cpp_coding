@@ -5,6 +5,7 @@ const int N = 1e4+5;
 int n;
 int a[N], p[N];
 
+
 bool is_pq(int num){
     int q = sqrt(num);
     if (q*q == num) return true;
