@@ -1,33 +1,16 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
 using namespace std;
 
-string a;
-int res;
-vector<int> s(2000005, 0); // initialize vector with n+1 zeros
+bool is_pq(int num) {
+    int q = sqrt(num);
+    if (q * q == num) return true;
+    return false;
+}
 
-int main() {
-    int n, m;
-    cin >> n;
-    cin >> a;
-
-    for (int i = 1; i <= n; i++) {
-        s[i] = s[i - 1];
-        if (i < n && a[i - 1] == '1' && a[i] == '0') {
-            s[i]++;
-        }
-    }
-
-    cin >> m;
-    int l, r;
-    for (int i = 0; i < m; i++) {
-        cin >> l >> r;
-        res = s[r] - s[l - 1];
-
-        if (r < n && a[r - 1] == '1' && a[r] == '0') {
-            res--;
-        }
-
-        cout << res << "\n";
-    }
+int main(){
+    cout << is_pq(12);
+    cout << is_pq(11);
+    cout << is_pq(10);
+    cout << is_pq(1^0);
 }
