@@ -20,13 +20,12 @@ int main(){
     //cout << "\n";
     int cnt = 0;
     for (int l=1; l<=n-1; l++){
-        for (int r=l+1; r<=n; r++){
-            if (p[r]^p[l-1] && is_pq(p[r]^p[l-1])) {
+        for (int r=l; r<=n; r++){
+            if (is_pq(p[r]^p[l-1])) {
                 //cout << l << " " << r << "\n";
-                continue;
+                cnt ++;
             }
-            else cnt ++;
         }
     }
-    cout << cnt + 1<< "\n";
+    cout << n*(n+1)/2-cnt << "\n";
 }
