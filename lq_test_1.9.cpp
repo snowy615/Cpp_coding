@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 string s;
+using ll = long long;
 int k;
-const int N = 5e5+10000;
+const int N = 5e6;
 char st, en;
 int p[N];
 int main(){
@@ -11,7 +12,7 @@ int main(){
     cin >> st >> en;
     int n = s.size();
     //cout << n << " n \n";
-    int cnt = 0;
+    ll cnt = 0;
     //cout << st << " " << en;
     for (int i=0; i<n; i++){
         p[i+k-1] = p[i+k-2];
