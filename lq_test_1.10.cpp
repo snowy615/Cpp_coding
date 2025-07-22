@@ -1,33 +1,38 @@
 #include <iostream>
 
 using namespace std;
-const int N = 500;
+const int N = 310;
 int n, m, c,t;
 int a[N][N];
-int s;
+using ll = long long;
+int cnt[N][N];
+ll s;
 int xa, ya, xb, yb, z;
 int main(){
-
     cin >> n >> m >> c;
     for (int i=1; i<=n; i++){
         for (int j=1; j<=m; j++){
             cin >> a[i][j];
-            a[i][j] += a[i][j-1];
-            cout << a[i][j] << " ";
+            //cout << a[i][j] << " ";
         }
-        cout << "\n";
+        //cout << "\n";
     }
     cin >> t;
-    for (int i=1; i<=t; i++){
+    for (int zz=1; zz<=t; zz++){
         s = 0;
         cin >> xa >> ya >> xb >> yb >> z;
-        if (z>c) z%=c;
-        for (int j=ya; j<=yb; j++){
-            cout << "\n new part s " << a[xb]-a[xa-1];
-            s += a[j][xb]-a[j][xa-1];
+        z = z % (c+1);
+        for (int i=xa; i<=xb; i++){
+            for (int j = ya; j<=yb; j++){
+                s += a[i][j]-z;
+                //cout << "r " << i << " c "<< j << "\n";
+                //cout << cnt[j][i] << " " << a[j][i] << " \n";
+                //cout << " "<< a[i][j]-z << "\n";
+            }
+
         }
-        s -= (xb-xa+1)*(yb-ya+1)*z;
         cout << s << "\n";
+        //cout << "----------------------------";
     }
 
 }
