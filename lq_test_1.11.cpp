@@ -1,13 +1,14 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
+using ll=long long;
 const int N = 1e5+5;
-int dif[N];
-int original[N], f[N];
+ll dif[N];
+ll original[N], f[N];
 
 int main(){
     int n, m;
-    int sum = 0, msum=0;
+    ll sum = 0, msum=0;
     cin >> n;
     for (int i=1; i<=n; i++) {
         cin >> original[i];
