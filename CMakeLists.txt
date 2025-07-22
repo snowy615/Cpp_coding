@@ -3,4 +3,4 @@ project(summer_coding)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(summer_coding lq_3225_selectionSort.cpp)
+add_executable(summer_coding lq_test_1.12.cpp)
