@@ -53,7 +53,6 @@ int main(){
 //        cout << "2+2 = ";
 //        cout << s << "\n";
 
-
         //last cases
         //2+3+4
         v=min(min(a3, a2),b6);
