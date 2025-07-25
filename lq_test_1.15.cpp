@@ -3,6 +3,7 @@
 #include <algorithm>
 using namespace std;
 
+int chocoDate[100010];
 struct T{
     int p, d, q;
 };
@@ -26,17 +27,19 @@ int main(){
     }
     sort(v.begin(), v.end(), comparePDQ);
     int q_c = 0, p_c = 0;
-    while (!v.empty() && q_c < x){
-        if (v[0].q < x-q_c) {
-            q_c += v[0].q;
-            p_c += v[0].p * v[0].q;
-            v.erase(v.begin());
-        } else{
-            p_c += v[0].q * (x-q_c);
-            q_c = x;
-            v.erase(v.begin());
-            break;
+    for (auto vv: v){
+        if (q_c == x) break;
+        int mq = min(min(vv.q, vv.d), x-q_c);
+        int qq = 0;
+        for (int l=1; l<=vv.d; l++){
+            if(!chocoDate[l]) {
+                chocoDate[l] = 1;
+                qq ++;
+            }
+            if (qq == mq) break;
         }
+        p_c += qq*vv.p;
+        q_c += qq;
     }
     if (q_c == x) cout << p_c;
     else cout << "-1";
