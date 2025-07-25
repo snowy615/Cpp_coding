@@ -12,24 +12,26 @@ int main(){
     cin >> n;
     cin >> ma;
     for (int i=1; i<=ma; i++) cin >> a[i];
-    //reverse(a+1, a+ma+1);
+    reverse(a+1, a+ma+1);
     cin >> mb;
     for (int i=1; i<=mb; i++) cin >> b[i];
-    //reverse(b+1, b+mb+1);
+    reverse(b+1, b+mb+1);
     int total_digit = max(ma, mb);
+    int tbase = 1;
     for (int i=1; i<=total_digit; i++){
         int s = a[i]-b[i]-bd;
-        int base = max(max(a[i]+1, b[i]+1), s);
+        int base = max(max(max(a[i]+1, b[i]+1), s+1), 2);
 
         if (s>=0){
-            cnt += pow(base,i-1)*s;
-            cout << "0 _ i " << i << " s " << s << " cnt " << pow(base,i-1)*s << "\n";
+            cnt += tbase*s;
+            //cout << "0 _ i " << i << " s " << s << " cnt " << tbase*s << " tbase " << tbase << "\n";
             bd = 0;
         }else{
-            cnt += pow(base, i-1)*(s+base);
-            cout << "0 _ i " << i << " s " << s << " cnt " << pow(base, i-1)*(s+base)<< "\n";
+            cnt += tbase*(s+base);
+            //cout << "0 _ i " << i << " s " << s << " cnt " << tbase*(s+base) << " tbase " << tbase << "\n";
             bd = 1;
         }
+        tbase *= base;
     }
     cout << cnt;
     return 0;
