@@ -2,10 +2,11 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+using ll = long long;
 
 int chocoDate[100010];
 struct T{
-    int p, d, q;
+    ll p, d, q;
 };
 
 bool comparePDQ(const T &a, const T &b) {
@@ -15,23 +16,23 @@ bool comparePDQ(const T &a, const T &b) {
 }
 
 vector<T> v;
-int x, n;
+ll x, n;
 
 int main(){
     cin >> x;
     cin >> n;
-    int p, d, q;
+    ll p, d, q;
     for (int i=1; i<=n; i++){
         cin >> p >> d >> q;
         v.push_back({p, d, q});
     }
     sort(v.begin(), v.end(), comparePDQ);
-    int q_c = 0, p_c = 0;
+    ll q_c = 0, p_c = 0;
     for (auto vv: v){
         if (q_c == x) break;
-        int mq = min(min(vv.q, vv.d), x-q_c);
-        int qq = 0;
-        for (int l=1; l<=vv.d; l++){
+        ll mq = min(min(vv.q, vv.d), x-q_c);
+        ll qq = 0;
+        for (int l=vv.d; l>=1; l--){
             if(!chocoDate[l]) {
                 chocoDate[l] = 1;
                 qq ++;
