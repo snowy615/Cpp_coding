@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 using ll = long long;
 ll k, n, vv,tt;
 vector<ll> num;
 
-void update(int index, ll a){
-    num[index] = a;
+void update(ll index, ll a){
+    num[index] = min(a, num[index]);
     if (index-1 > 0 && num[index-1] > a+1) {
         //cout << "a";
         update(index-1, a+1);
@@ -18,8 +19,8 @@ void update(int index, ll a){
 }
 int main(){
     cin >> k >> n;
-    for (int i=1; i<=n; i++){
-        num.push_back(10000000);
+    for (int i=0; i<=1+n; i++){
+        num.push_back(1000000001);
     }
     for (int i=1; i<=k; i++){
         cin >> vv >> tt;
