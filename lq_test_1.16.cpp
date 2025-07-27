@@ -5,7 +5,7 @@ using namespace std;
 using ll = long long;
 ll k, n, vv,tt;
 vector<pair<ll, ll>> v;
-
+//
 int main(){
     cin >> k >> n;
     for (int i=1; i<=k; i++){
