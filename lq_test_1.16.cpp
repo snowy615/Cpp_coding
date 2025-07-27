@@ -3,13 +3,14 @@
 #include <utility>
 using namespace std;
 using ll = long long;
-ll k, n;
-vector<pair<ll, ll>> v(k);
+ll k, n, vv,tt;
+vector<pair<ll, ll>> v;
 
 int main(){
     cin >> k >> n;
     for (int i=1; i<=k; i++){
-        cin >> v[i].first >> v[i].second;
+        cin >> vv >> tt;
+        v.push_back({vv, tt});
     }
     ll t_max = 0;
     for (int i=1; i<=n; i++){
