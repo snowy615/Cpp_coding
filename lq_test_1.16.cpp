@@ -1,11 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <utility>
 using namespace std;
 using ll = long long;
 ll k, n, vv,tt;
-const int N = 1e5+10;
-ll num[N];
+vector<ll> num;
 
 void update(int index, ll a){
     num[index] = a;
@@ -21,13 +19,13 @@ void update(int index, ll a){
 int main(){
     cin >> k >> n;
     for (int i=1; i<=n; i++){
-        num[i] = 100010;
+        num.push_back(10000000);
     }
     for (int i=1; i<=k; i++){
         cin >> vv >> tt;
         update(vv, tt);
     }
-    ll t_max = 0;
+    ll t_max = 1;
     for (int i=1; i<=n; i++){
         if (num[i] > t_max) t_max = num[i];
         //cout << num[i] << " ";
