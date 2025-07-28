@@ -1,37 +1,46 @@
 #include <iostream>
 #include <vector>
+#include <utility>
 #include <algorithm>
 using namespace std;
 using ll = long long;
 ll k, n, vv,tt;
-vector<ll> num;
+vector<pair<ll, ll>> num;
+vector<pair<ll, ll>> x;
 
-void update(ll index, ll a){
-    num[index] = min(a, num[index]);
-    if (index-1 > 0 && num[index-1] > a+1) {
-        //cout << "a";
-        update(index-1, a+1);
+bool check(int t){
+    x.clear();
+    for (int i=0; i<k; i++) {
+        if (num[i].second <= t) {
+            ll nl = max(1ll, num[i].first - (t - num[i].second));
+            ll nr = min(n, num[i].first + (t - num[i].second));
+            x.push_back({nl, nr});
+        }
+
     }
-    if (index+1 <= n && num[index+1] > a+1) {
-        //cout << "b";
-        update(index+1, a+1);
+    sort(x.begin(), x.end());
+    if (x[0].first > 1) return 0;
+    ll end = x[0].second;
+    for (int i=1; i<x.size(); i++){
+        if (x[i].first > end) break;
+        else end = max(end, x[i].second);
     }
+    return end >= n;
+
 }
+
 int main(){
     cin >> k >> n;
-    for (int i=0; i<=1+n; i++){
-        num.push_back(1000000001);
-    }
-    for (int i=1; i<=k; i++){
+    for (int i=0; i<k; i++){
         cin >> vv >> tt;
-        update(vv, tt);
+        num.push_back({vv, tt});
     }
-    ll t_max = 1;
-    for (int i=1; i<=n; i++){
-        if (num[i] > t_max) t_max = num[i];
-        //cout << num[i] << " ";
+    ll l = 0, r = 1e10;
+    while (l+1 != r) {
+        ll mid = (r-l)/2+l;
+        if (check(mid)) r = mid;
+        else l = mid;
     }
-    //cout << "\n";
-    cout << t_max;
+    cout << r;
     return 0;
 }
