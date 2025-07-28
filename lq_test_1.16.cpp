@@ -1,43 +1,44 @@
-#include <iostream>
-#include <vector>
-#include <utility>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-ll n, len, vv,tt;
-vector<pair<ll, ll>> num;
-vector<pair<ll, ll>> x;
 
-bool check(int t){
+ll k, n;                           // k = 喷头数, n = 管道长度
+vector<pair<ll,ll>> num;           // {位置, 启动时间}
+vector<pair<ll,ll>> x;             // 有效区间
+
+bool check(ll t) {                 // ① 改成 ll
     x.clear();
-    for (int i=0; i<n; i++) {
+    for (ll i = 0; i < k; ++i) {
         if (num[i].second <= t) {
-            ll nl = max(1ll, num[i].first - (t - num[i].second));
-            ll nr = min(len, num[i].first + (t - num[i].second));
+            ll nl = max(1LL, num[i].first - (t - num[i].second));
+            ll nr = min(n  , num[i].first + (t - num[i].second));
             x.push_back({nl, nr});
         }
-
     }
+    if (x.empty()) return false;   // ③ 防越界
     sort(x.begin(), x.end());
-    if (x[0].first > 1) return 0;
+    if (x[0].first > 1) return false;
     ll end = x[0].second;
-    for (int i=1; i<x.size(); i++){
+    for (size_t i = 1; i < x.size(); ++i) {
         if (x[i].first > end+1) break;
-        else end = max(end, x[i].second);
+        end = max(end, x[i].second);
     }
-    return end >= len;
-
+    return end >= n;
 }
 
-int main(){
-    cin >> n >> len;
-    for (int i=0; i<n; i++){
-        cin >> vv >> tt;
-        num.push_back({vv, tt});
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cin >> k >> n;
+    for (ll i = 0, v, t; i < k; ++i) {
+        cin >> v >> t;
+        num.push_back({v, t});
     }
-    ll l = 0, r = 1e10;
-    while (l+1 != r) {
-        ll mid = (r-l)/2+l;
+
+    ll l = 0, r = 10000000000LL;   // ② 显式 LL
+    while (l + 1 != r) {
+        ll mid = l + (r - l) / 2;
         if (check(mid)) r = mid;
         else l = mid;
     }
