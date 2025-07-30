@@ -32,16 +32,17 @@ int main(){
             }
             m --;
         }
-        while (m && c_max.empty()){
-            ll cur_min = c_min.top();
-            lf += cur_min;
-            c_min.pop();
-            m--;
-        }
-        while (m && c_min.empty()){
+        while (m && !c_max.empty()){
             ll cur_max = c_max.top();
             lf += 2*k-cur_max;
             c_max.pop();
+            m--;
+
+        }
+        while (m && !c_min.empty()){
+            ll cur_min = c_min.top();
+            lf += cur_min;
+            c_min.pop();
             m--;
         }
         cout << lf << "\n";
