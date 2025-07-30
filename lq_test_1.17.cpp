@@ -44,7 +44,8 @@ int main(){
             c_max.pop();
             m--;
         }
-        cout << lf;
-        return 0;
+        cout << lf << "\n";
+
     }
+    return 0;
 }
