@@ -19,30 +19,33 @@ int main(){
     for (int i=1; i<=q; i++){
         cin >> k >> m;
         ll lf = 0;
+        priority_queue <ll> cc_max = c_max;
+        priority_queue <ll, vector<ll>, greater<ll> > cc_min = c_min;
+        //cout << "s " << cc_max.size() << "\n";
 
-        while (m && !c_max.empty() && !c_min.empty()){
-            ll cur_max = c_max.top();
-            ll cur_min = c_min.top();
+        while (m && !cc_max.empty() && !cc_min.empty()){
+            ll cur_max = cc_max.top();
+            ll cur_min = cc_min.top();
             if (cur_min>=k || 2*k-cur_max <= cur_min) {
                 lf += 2*k-cur_max;
-                c_max.pop();
+                cc_max.pop();
             } else{
                 lf += cur_min;
-                c_min.pop();
+                cc_min.pop();
             }
             m --;
         }
-        while (m && !c_max.empty()){
-            ll cur_max = c_max.top();
+        while (m && !cc_max.empty()){
+            ll cur_max = cc_max.top();
             lf += 2*k-cur_max;
-            c_max.pop();
+            cc_max.pop();
             m--;
 
         }
-        while (m && !c_min.empty()){
-            ll cur_min = c_min.top();
+        while (m && !cc_min.empty()){
+            ll cur_min = cc_min.top();
             lf += cur_min;
-            c_min.pop();
+            cc_min.pop();
             m--;
         }
         cout << lf << "\n";
