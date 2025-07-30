@@ -10,10 +10,11 @@ int main(){
     cin >> n >> q;
     for (int i=1; i<=n; i++) {
         cin >> c[i];
-        p[i] = p[i-1] + c[i];
     }
     sort(c+1, c+n+1);
-
+    for (int i=1; i<=n; i++) {
+        p[i] = p[i-1] + c[i];
+    }
     for (int i=1; i<=q; i++){
         cin >> k >> m;
 
