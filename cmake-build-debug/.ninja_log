@@ -1,5 +1,5 @@
 # ninja log v6
-868	1047	1753984985861337410	summer_coding	58f789f72420df38
+837	1034	1753989638910460216	summer_coding	ade6afe5a26993ef
 5	553	1753133208445840096	CMakeFiles/summer_coding.dir/lq_test_1.8.cpp.o	f5a1161c2d158341
 1	845	1752968641476376520	CMakeFiles/summer_coding.dir/lq_test_bug_1.7.cpp.o	fd20d21db93eb8cc
 6	870	1753912035551157315	CMakeFiles/summer_coding.dir/lq_test_1.17.cpp.o	d971ea043c5981eb
@@ -21,15 +21,16 @@
 5	898	1753212920565942408	CMakeFiles/summer_coding.dir/lq_3225_selectionSort.cpp.o	c202f3a54101f3c4
 13	893	1753661676525067658	CMakeFiles/summer_coding.dir/lq_test_1.16.cpp.o	81d1d40ac3aa3fd4
 5	830	1753212350894039173	CMakeFiles/summer_coding.dir/lq_3225_bubbleSort.cpp.o	8a1fde30bb56a1e2
-3	773	1753630160384186424	CMakeFiles/summer_coding.dir/cf_1039_A.cpp.o	5feec3d0c52fa972
 6	855	1753135352482435661	CMakeFiles/summer_coding.dir/lq_test_1.9.cpp.o	899fc14ea6c5a481
 0	705	1753134662592906316	CMakeFiles/summer_coding.dir/main.cpp.o	14addec3104c53f0
+3	773	1753630160384186424	CMakeFiles/summer_coding.dir/cf_1039_A.cpp.o	5feec3d0c52fa972
 8	868	1753984985001009176	CMakeFiles/summer_coding.dir/lq_178.cpp.o	a92b20731bfc15db
 9	851	1753238723980102796	CMakeFiles/summer_coding.dir/lq_test_1.13.cpp.o	eff3bb374f6713d2
+4	833	1753989638077816247	CMakeFiles/summer_coding.dir/lq_3255.cpp.o	7f92d34d4741f60e
 5	747	1753070945296380433	CMakeFiles/summer_coding.dir/lq_760.cpp.o	cc42c2e7a9bcf7f
-8	871	1753921741825544958	CMakeFiles/summer_coding.dir/lq_182.cpp.o	9eb714c6883a9b58
 8	708	1753210686924009687	CMakeFiles/summer_coding.dir/lq_3226_quickSort.cpp.o	23810d6152f667f7
+8	871	1753921741825544958	CMakeFiles/summer_coding.dir/lq_182.cpp.o	9eb714c6883a9b58
 6	1001	1753221372692874361	CMakeFiles/summer_coding.dir/lq_test_1.12.cpp.o	8240b26d7b7812be
 13	873	1753418990024910192	CMakeFiles/summer_coding.dir/lq_test_1.15.cpp.o	ce368d46447b047a
-4	833	1753989638077816247	CMakeFiles/summer_coding.dir/lq_3255.cpp.o	7f92d34d4741f60e
-837	1034	1753989638910460216	summer_coding	ade6afe5a26993ef
+1	802	1753990209110243610	CMakeFiles/summer_coding.dir/lq_2490.cpp.o	a01ff9e271148126
+805	1029	1753990209914411997	summer_coding	ec488cd24a536afa
