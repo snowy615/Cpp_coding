@@ -12,7 +12,7 @@ void dfs(int xx, int yy){
     for (int z = 0; z<4; z++){
         int xxx = xx + x[z];
         int yyy =  yy+y[z];
-        if (mp[xxx][yyy] != '.' || color[xxx][yyy]) continue;
+        if (mp[xxx][yyy] == '.' || color[xxx][yyy]) continue;
         dfs(xxx, yyy);
     }
 }
@@ -50,7 +50,6 @@ int main(){
             }
         }
     }
-    cout << idx << "\n";
     cout << idx-cnt;
     return 0;
 
