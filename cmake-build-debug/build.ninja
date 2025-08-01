@@ -49,8 +49,8 @@ cmake_ninja_workdir = /Users/snowyan/CLionProjects/summer_coding/cmake-build-deb
 
 build cmake_object_order_depends_target_summer_coding: phony || .
 
-build CMakeFiles/summer_coding.dir/lq_511.cpp.o: CXX_COMPILER__summer_coding_unscanned_Debug /Users/snowyan/CLionProjects/summer_coding/lq_511.cpp || cmake_object_order_depends_target_summer_coding
-  DEP_FILE = CMakeFiles/summer_coding.dir/lq_511.cpp.o.d
+build CMakeFiles/summer_coding.dir/lq_test_1.18.cpp.o: CXX_COMPILER__summer_coding_unscanned_Debug /Users/snowyan/CLionProjects/summer_coding/lq_test_1.18.cpp || cmake_object_order_depends_target_summer_coding
+  DEP_FILE = CMakeFiles/summer_coding.dir/lq_test_1.18.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/summer_coding.dir
   OBJECT_FILE_DIR = CMakeFiles/summer_coding.dir
@@ -63,7 +63,7 @@ build CMakeFiles/summer_coding.dir/lq_511.cpp.o: CXX_COMPILER__summer_coding_uns
 #############################################
 # Link the executable summer_coding
 
-build summer_coding: CXX_EXECUTABLE_LINKER__summer_coding_Debug CMakeFiles/summer_coding.dir/lq_511.cpp.o
+build summer_coding: CXX_EXECUTABLE_LINKER__summer_coding_Debug CMakeFiles/summer_coding.dir/lq_test_1.18.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.5.sdk
   OBJECT_DIR = CMakeFiles/summer_coding.dir
   POST_BUILD = :
