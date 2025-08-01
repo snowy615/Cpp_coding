@@ -4,8 +4,7 @@ using ll = long long;
 using namespace std;
 const int N=3e5+5;
 int n,m, a, b;
-int dif[N];
-ll pre[N];
+int dif[N], pre[N];
 vector<pair<int,int>> v;
 int main(){
     cin >> n >> m;
@@ -15,16 +14,12 @@ int main(){
         dif[a] ++;
         dif[b+1] --;
     }
+    int ans = 0;
     for (int i=1; i<=n; i++){
-        pre[i] = pre[i-1]+dif[i];
+        dif[i] += dif[i-1];
+        pre[i] += pre[i-1]+(dif[i]<=1);
+        if (dif[i] == 0) ans ++;
     }
-    for(int i=0; i<v.size(); i++){
-        ll cnt = 0;
-        for (int j=1; j<=n; j++){
-            int cur = pre[j];
-            if (v[i].first <= j && j <= v[i].second) cur --;
-            if (cur == 0) cnt ++;
-        }
-        cout << cnt << "\n";
-    }
+    for(int i=0; i<m; i++) cout << pre[v[i].second]-pre[v[i].first-1]+ans << endl;
+    return 0;
 }
