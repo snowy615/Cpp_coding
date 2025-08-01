@@ -1,10 +1,11 @@
 #include <iostream>
 #include <vector>
-
+using ll = long long;
 using namespace std;
 const int N=3e5+5;
 int n,m, a, b;
-int dif[N], pre[N];
+int dif[N];
+ll pre[N];
 vector<pair<int,int>> v;
 int main(){
     cin >> n >> m;
@@ -18,7 +19,7 @@ int main(){
         pre[i] = pre[i-1]+dif[i];
     }
     for(int i=0; i<v.size(); i++){
-        int cnt = 0;
+        ll cnt = 0;
         for (int j=1; j<=n; j++){
             int cur = pre[j];
             if (v[i].first <= j && j <= v[i].second) cur --;
