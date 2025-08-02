@@ -1,0 +1,1 @@
+//simple addition in sequence. will be implementing in .cu
