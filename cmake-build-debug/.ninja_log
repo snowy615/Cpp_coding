@@ -3,8 +3,9 @@
 23	915	1754020759519205819	CMakeFiles/summer_coding.dir/lq_test_1.18.cpp.o	3dcf65ec7014b634
 6	1001	1753221372692874361	CMakeFiles/summer_coding.dir/lq_test_1.12.cpp.o	8240b26d7b7812be
 8	708	1753210686924009687	CMakeFiles/summer_coding.dir/lq_3226_quickSort.cpp.o	23810d6152f667f7
-7	884	1754008885734163641	CMakeFiles/summer_coding.dir/lq_2490.cpp.o	a01ff9e271148126
+0	444	1754197825167448843	CMakeFiles/summer_coding.dir/lq_3433.cpp.o	1fb1253914cef2a1
 8	871	1753921741825544958	CMakeFiles/summer_coding.dir/lq_182.cpp.o	9eb714c6883a9b58
+7	884	1754008885734163641	CMakeFiles/summer_coding.dir/lq_2490.cpp.o	a01ff9e271148126
 5	870	1753132303760811184	CMakeFiles/summer_coding.dir/lq_3225.cpp.o	1b8059b78590c4a4
 5	747	1753070945296380433	CMakeFiles/summer_coding.dir/lq_760.cpp.o	cc42c2e7a9bcf7f
 4	833	1753989638077816247	CMakeFiles/summer_coding.dir/lq_3255.cpp.o	7f92d34d4741f60e
@@ -12,7 +13,7 @@
 7	1403	1754011806364718523	CMakeFiles/summer_coding.dir/lq_511.cpp.o	1230a195be92fdb1
 8	868	1753984985001009176	CMakeFiles/summer_coding.dir/lq_178.cpp.o	a92b20731bfc15db
 3	773	1753630160384186424	CMakeFiles/summer_coding.dir/cf_1039_A.cpp.o	5feec3d0c52fa972
-0	705	1753134662592906316	CMakeFiles/summer_coding.dir/main.cpp.o	14addec3104c53f0
+1	866	1754540674440223504	CMakeFiles/summer_coding.dir/main.cpp.o	14addec3104c53f0
 6	855	1753135352482435661	CMakeFiles/summer_coding.dir/lq_test_1.9.cpp.o	899fc14ea6c5a481
 13	893	1753661676525067658	CMakeFiles/summer_coding.dir/lq_test_1.16.cpp.o	81d1d40ac3aa3fd4
 5	830	1753212350894039173	CMakeFiles/summer_coding.dir/lq_3225_bubbleSort.cpp.o	8a1fde30bb56a1e2
@@ -30,11 +31,12 @@
 10	806	1753030571462595017	CMakeFiles/summer_coding.dir/lq_test_1.7.cpp.o	d70dd825b2c4c431
 6	782	1753222055831243277	CMakeFiles/summer_coding.dir/lq_test_1.11.cpp.o	67bd10878bc2bea
 6	902	1752961631115216712	CMakeFiles/summer_coding.dir/lq_test_1.5.cpp.o	18252a1b148cffa6
-915	1093	1754020760411107531	summer_coding	174254294a4943db
-2	77	1754197822893344827	build.ninja	7458c2a7d4f2cf70
+869	1040	1754540675307465961	summer_coding	b99dc91e0ae50a58
+2	77	1754540686211045484	build.ninja	7458c2a7d4f2cf70
 9	999	1753031173957041513	CMakeFiles/summer_coding.dir/lq_3683.cpp.o	fc582e9e540a3251
 6	870	1753912035551157315	CMakeFiles/summer_coding.dir/lq_test_1.17.cpp.o	d971ea043c5981eb
 1	845	1752968641476376520	CMakeFiles/summer_coding.dir/lq_test_bug_1.7.cpp.o	fd20d21db93eb8cc
 5	553	1753133208445840096	CMakeFiles/summer_coding.dir/lq_test_1.8.cpp.o	f5a1161c2d158341
-0	444	1754197825167448843	CMakeFiles/summer_coding.dir/lq_3433.cpp.o	1fb1253914cef2a1
-447	633	1754197825613758641	summer_coding	90e3a27316e48389
+7	823	1754540455619434742	CMakeFiles/summer_coding.dir/lq_3433_heap.cpp.o	460047d7e8b354bd
+0	726	1754540686584862962	CMakeFiles/summer_coding.dir/add.cpp.o	a752f9ff598703fc
+729	777	1754540687313354390	summer_coding	c1c02bbf271b5f58
