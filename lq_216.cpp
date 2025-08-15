@@ -13,22 +13,22 @@ ll mm[N][N];
 ll dp[N][N][13][13];
 ll d = 1e9+7;
 
-ll test(int x, int y, ll max, int cnt){
+ll test(int x, int y, ll mx, int cnt){
     ll res = 0;
     if (x == m && y == n) return (ll) (cnt==k);
-    if (dp[x][y][max][cnt]!=-1) return dp[x][y][max][cnt] % d;
+    if (dp[x][y][mx][cnt]!=-1) return dp[x][y][mx][cnt] % d;
 
     for (int i=0; i<2; i++){
         int xx = cx[i]+x;
         int yy = cy[i]+y;
-        if (xx > 0 && xx <= n && yy > 0 && yy<=m){
-            res = (res+test(xx, yy, max, cnt))%d;
-            if (mm[xx][yy] > max && cnt < k) {
+        if (xx > 0 && xx <= m && yy > 0 && yy<=n){
+            res = (res+test(xx, yy, mx, cnt))%d;
+            if (mm[xx][yy] > mx && cnt < k) {
                 res = (res + test(xx, yy, mm[xx][yy], cnt+1))%d;
             }
         } else continue;
     }
-    return dp[x][y][max][cnt] = res;
+    return dp[x][y][mx][cnt] = res;
 
 }
 
