@@ -1,7 +1,8 @@
 #include <iostream>
 #include <algorithm>
+#define int long long
 using namespace std;
-using ll = long long;
+
 const int N = 1e5+5;
 int n, k, T;
 int s[N];
@@ -11,7 +12,7 @@ int sc[N];
 //var = E(x^2) - [E(x)]^2
 bool check(int mid){
     for (int i=1; i<=mid; i++) sc[i] = s[i];
-    ll first[mid+1], second[mid+1];
+    int first[mid+1], second[mid+1];
     first[0] = 0, second[0] =0;
     sort(sc+1, sc+mid+1);
     for (int i=1; i<=mid; i++){
@@ -19,13 +20,13 @@ bool check(int mid){
         second[i] = second[i-1]+sc[i]*sc[i];
     }
     for (int i=0; i<=mid-k; i++){
-        ll sum1 = first[i+k]-first[i];
+        int sum1 = first[i+k]-first[i];
         if ((second[i+k]-second[i])*k-(sum1*sum1) <= T*k*k) return true;
     }
     return false;
 }
 
-int main(){
+signed main(){
     cin >> n >> k >> T;
     for (int i=1; i<=n; i++) cin >> s[i];
     int l = 1, r = n;
