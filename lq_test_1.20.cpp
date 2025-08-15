@@ -25,7 +25,7 @@ signed main(){
     }
     sort(v.begin(), v.end());
     int md=1e9+5;
-    for (int i=1; i<n; i++){
+    for (int i=1; i<v.size(); i++){
         int d= abs(v[i]-v[i-1]);
         if (d<md) md = d;
     }
