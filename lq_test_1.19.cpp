@@ -12,13 +12,15 @@ int sc[N];
 bool check(int mid){
     for (int i=1; i<=mid; i++) sc[i] = s[i];
     ll first[mid+1], second[mid+1];
+    first[0] = 0, second[0] =0;
     sort(sc+1, sc+mid+1);
-    for (int i=1; i<=n; i++){
-        first[i] = first[i-1]+s[i];
-        second[i] = second[i-1]+s[i]*s[i];
+    for (int i=1; i<=mid; i++){
+        first[i] = first[i-1]+sc[i];
+        second[i] = second[i-1]+sc[i]*sc[i];
     }
     for (int i=0; i<=mid-k; i++){
-        if ((second[i+k]-second[i])*k*k-(first[i+k]*first[i+k]-first[i]*first[i]) <= T*k*k) return true;
+        ll sum1 = first[i+k]-first[i];
+        if ((second[i+k]-second[i])*k-(sum1*sum1) <= T*k*k) return true;
     }
     return false;
 }
