@@ -16,7 +16,7 @@ bool check(int mid){
         second[i] = second[i-1]+s[i]*s[i];
     }
     for (int i=0; i<=mid-k; i++){
-        if ((second[i+k]-second[i])*k*k-(first[i+k]*first[i+k]-first[i]*first[i]) < T) return true;
+        if ((second[i+k]-second[i])*k*k-(first[i+k]*first[i+k]-first[i]*first[i]) <= T*k*k) return true;
     }
     return false;
 }
