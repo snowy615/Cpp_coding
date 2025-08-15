@@ -10,7 +10,7 @@ ll first[N], second[N];
 //var = E(x^2) - [E(x)]^2
 bool check(int mid){
     for (int i=0; i<=mid-k; i++){
-        if ((second[i+k]-second[i]-(first[i+k]*first[i+k]-first[i]*first[i])/k)/k < T) return true;
+        if ((second[i+k]-first[i+k]*first[i+k]/k)< T*k) return true;
     }
     return false;
 }
