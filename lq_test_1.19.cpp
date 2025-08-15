@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 using ll = long long;
 const int N = 1e5+5;
@@ -8,8 +9,8 @@ ll first[N], second[N];
 
 //var = E(x^2) - [E(x)]^2
 bool check(int mid){
-    for (int i=mid; i<=n; i++){
-        if (second[i]-first[i-mid-1]*first[i-mid-1]-second[i-mid-1]+first[i] < T) return true;
+    for (int i=0; i<=mid-k; i++){
+        if ((second[i+k]-second[i]-(first[i+k]*first[i+k]-first[i]*first[i])/k)/k < T) return true;
     }
     return false;
 }
@@ -17,19 +18,19 @@ bool check(int mid){
 int main(){
     cin >> n >> k >> T;
     for (int i=1; i<=n; i++) cin >> s[i];
-    sort(s+1, s+n+1);
     int l = 0, r = n+1;
 
     for (int i=1; i<=n; i++){
         first[i] = first[i-1]+s[i];
         second[i] = second[i-1]+s[i]*s[i];
     }
-    while (l+1 < r){
+    while (l +1 < r){
         int mid = (l+r) >> 1;
-        cout << l << " " << r << "\n";
+//        cout << l << " " << r << "\n";
         if (check(mid)) r = mid;
         else l = mid;
     }
+//    cout << "\n\n" << l << " " << r << "\n";
     if (l==0) cout << -1;
-    else cout << l;
+    else cout << r;
 }
