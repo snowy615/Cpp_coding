@@ -1,16 +1,21 @@
 #include <iostream>
+#include <queue>
 using namespace std;
-int n;
-const int N=1e5+5;
-int num[N];
+int n, v;
+priority_queue<int> max_pq;
 
 int main(){
     cin >> n;
-    int s = 0;
     for (int i=0; i<n; i++){
-        cin >> num[i];
+        cin >> v;
+        max_pq.push(v);
     }
-    sort(num, num+n);
-    for (int i=0; i<n; i++) if (i%2) s ^= num[i];
-    cout << s;
+    while (max_pq.size()>1){
+        int v1 = max_pq.top();
+        max_pq.pop();
+        int v2 = max_pq.top();
+        max_pq.pop();
+        max_pq.push(v1^v2);
+    }
+    cout << max_pq.top();
 }
