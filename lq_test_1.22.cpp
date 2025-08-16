@@ -14,10 +14,13 @@ signed main(){
         cin >> num[i];
         pre[i] = pre[i-1] ^ num[i];
     }
-    for (int i=1; i<=n; i++){
-        for (int j=i; j<=n; j++){
-            s += pre[i-1]^pre[j];
+    for (int bit = 0; bit <= 20; bit++){
+        int cnt0 = 0, cnt1 = 0;
+        for (int i=0; i<=n; i++){
+            if (pre[i] & (1<<bit)) cnt1 ++;
+            else cnt0 ++;
         }
+        s += cnt0*cnt1 * (1 << bit);
     }
     cout << s;
 }
