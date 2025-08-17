@@ -4,7 +4,7 @@
 
 using namespace std;
 
-double K = 0.99, ST = 1e5, ET = 1e-9, L=100;
+double K = 0.993, ST = 1e5, ET = 1e-9, L=2;
 int n;
 const int N = 1e3+5;
 double x[N], y[N];
@@ -24,8 +24,8 @@ int main(){
     double ans = E;
     while (T > ET){
         for (int i=1; i<=L; i++){
-            double nx = xx+(rand()*2-RAND_MAX) *T;
-            double ny = yy+(rand()*2-RAND_MAX)*T;
+            double nx = xx+(double)(rand()*2-RAND_MAX) *T;
+            double ny = yy+(double)(rand()*2-RAND_MAX)*T;
             double ne = distance(nx, ny);
             double de = ne-E;
             if (de < 0 || exp(-de/T) > rand()/(double)RAND_MAX){
