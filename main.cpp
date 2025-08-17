@@ -1,48 +1,41 @@
 #include <iostream>
-#include <vector>
-#include <utility>
-#include <algorithm>
+#include <cmath>
+
 using namespace std;
-#define int long long
-int n, len;
-vector<pair<int, int>> x;
-struct da {
-    int l, s;
-} a[100005];
 
-bool check(int t) {
-    x.clear(); // 每次调用check函数时清空x，避免上次的残留数据影响
-    for (int i = 1; i <= n; i++) {
-        if (a[i].s <= t) {
-            int nl = a[i].l - (t - a[i].s);
-            int nr = a[i].l + (t - a[i].s);
-            nl = max(1ll, nl); // 确保左端点不小于1
-            nr = min(len, nr); // 确保右端点不大于管道长度
-            x.push_back({nl, nr});
+double K = 0.99, ST = 1e5, ET = 1e-9, L=5;
+int n;
+const int N = 1e3+5;
+double x[N], y[N];
+
+double distance(double nx, double ny){
+    double d = 0;
+    for (int i=1; i<=n; i++) d += sqrt(pow(nx-x[i], 2) + pow(ny-y[i], 2));
+    return d;
+}
+int main(){
+    cin >> n;
+    for (int i=1; i<=n; i++) cin >> x[i] >> y[i];
+
+    double T = ST; // temp
+    double xx = 0, yy = 0; //grid coordinate
+    double E = distance(xx, yy); //total dis
+    double ans = E;
+    while (T > ET){
+        for (int i=1; i<=L; i++){
+            double nx = xx+(double)(rand()*2-RAND_MAX) *T;
+            double ny = yy+(double)(rand()*2-RAND_MAX)*T;
+            double nE = distance(nx, ny);
+            double dE = nE-E;
+            if (dE < 0 || exp(-dE/T) > rand()/(double)RAND_MAX){
+                xx=nx;
+                yy=ny;
+                E=nE;
+                ans=min(ans, E);
+            }
         }
+        T *= K;
     }
-    sort(x.begin(), x.end());
-    if (x[0].first > 1) return 0;
-    int end = x[0].second;
-    for (int i = 1; i < x.size(); i++) {
-        if (x[i].first > end) break;
-        else end = max(end, x[i].second);
-    }
-    return end >= len;
+    printf("%.0lf",ans);
 }
 
-signed main() {
-    cin >> n >> len;
-    for (int i = 1; i <= n; i++) {
-        int l, s;
-        cin >> a[i].l >> a[i].s;
-    }
-    int l = 0, r = 1e10;
-    while (l + 1!= r) {
-        int mid = (r - l) / 2 + l;
-        if (check(mid)) r = mid;
-        else l = mid;
-    }
-    cout << r;
-    return 0;
-}
