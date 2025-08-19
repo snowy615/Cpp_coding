@@ -20,7 +20,7 @@ void dfs2(int i, int s){
         return;
     }
     dfs2(i+1, s);
-    dfs2(i+1, s+num1[i]);
+    dfs2(i+1, s+num2[i]);
 }
 
 signed main(){
