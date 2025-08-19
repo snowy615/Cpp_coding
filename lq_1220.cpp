@@ -7,7 +7,7 @@ int num1[19];
 int num2[19];
 map<int, int> m;
 void dfs1(int i, int s){
-    if (i>=n1){
+    if (i>n1){
         m[s] ++;
         return;
     }
@@ -15,7 +15,7 @@ void dfs1(int i, int s){
     dfs1(i+1, s+num1[i]);
 }
 void dfs2(int i, int s){
-    if (i>=n2){
+    if (i>n2){
         ans += m[x-s];
         return;
     }
