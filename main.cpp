@@ -39,3 +39,4 @@ int main(){
     printf("%.0lf",ans);
 }
 
+//kmp algorithm https://www.youtube.com/watch?v=ynv7bbcSLKE
