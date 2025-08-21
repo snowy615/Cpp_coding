@@ -14,6 +14,16 @@ int main(){
     nex[0] = 0;
     nex[1] = 0;
     for (int i = 2, j = 0; i <= m; i++){
-
+        while (j && p[i] != p[j+1]) j = nex[j];
+        if (p[i] == p[j+1]) j++;
+        nex[i] = j;
     }
+    int res = 0;
+    for (int i=1, j=0; i<=n; i++){
+        while (j && p[j+1] != s[i]) j = nex[j];
+        if (s[i] == p[j+1]) j++;
+        if (j == m) res ++;
+    }
+    cout << res;
+
 }
