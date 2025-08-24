@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 const int N = 1e6 + 5;
 char s[N];
