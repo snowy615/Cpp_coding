@@ -1,0 +1,16 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -G Xcode /Users/snowyan/CLionProjects/summer_coding
+-- The C compiler identification is unknown
+-- The CXX compiler identification is unknown
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_C_COMPILER could be found.
+
+
+
+CMake Error at CMakeLists.txt:2 (project):
+  No CMAKE_CXX_COMPILER could be found.
+
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/snowyan/CLionProjects/summer_coding/cmake-build-debug-system/CMakeFiles/CMakeOutput.log".
+See also "/Users/snowyan/CLionProjects/summer_coding/cmake-build-debug-system/CMakeFiles/CMakeError.log".
