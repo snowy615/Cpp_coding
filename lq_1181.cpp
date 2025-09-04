@@ -21,3 +21,4 @@ signed main(){
         cout << qmi(n, m, p) << "\n";
     }
 }
+
