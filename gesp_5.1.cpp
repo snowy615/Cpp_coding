@@ -13,14 +13,12 @@ signed main(){
 
     int cnt = 0;
     for (int i=0; i<=m/b; i++){
-        int mb = i;
+        int mb = i; //na
         int ma = (m-mb*b)/a;
-
-        if (mb*a+ma*b <= n){
-            cnt = max(cnt, mb+ma);
-            cout << ma+mb << " " << ma << " " << mb;
-            cout << " " << ma*a+mb*b << " " << ma*b+mb*a << "\n";
-        }
+        int nb = (n-mb*a)/b;
+        cnt = max(cnt, mb+min(ma, nb));
+//        cout << ma+mb << " " << ma << " " << mb;
+//        cout << " " << ma*a+mb*b << " " << ma*b+mb*a << "\n";
     }
     cout << cnt;
 }
