@@ -1,10 +1,9 @@
 #include <iostream>
 #include <algorithm>
-#define int long long
 using namespace std;
 int a,b,n,m;
-
-signed main(){
+int ma, mb, nb;
+int main(){
     cin >> n >> m;
     cin >> a >> b;
 
@@ -13,10 +12,11 @@ signed main(){
 
     int cnt = 0;
     for (int i=0; i<=m/b; i++){
-        int mb = i; //na
-        int ma = (m-mb*b)/a;
-        int nb = (n-mb*a)/b;
-        cnt = max(cnt, mb+min(ma, nb));
+        mb = i; //na
+        ma = (m-mb*b)/a;
+        nb = (n-mb*a)/b;
+        if (ma>nb) ma = nb;
+        if (mb+ma>cnt) cnt = ma+mb;
 //        cout << ma+mb << " " << ma << " " << mb;
 //        cout << " " << ma*a+mb*b << " " << ma*b+mb*a << "\n";
     }
