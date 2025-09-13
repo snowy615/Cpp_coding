@@ -1,37 +1,24 @@
 #include <iostream>
 #define int long long
 
+
 using namespace std;
 int a,b,n,m;
-int ma, mb, nb, tmp;
 signed main(){
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
     cin >> n >> m;
     cin >> a >> b;
+    if (a==b) cout << min(n,m)/a;
+    else{
+        if (a>b) swap(a,b);
 
-    if (a>b) {
-        tmp = a;
-        a=b;
-        b=tmp;
-    }
-    if (m>n) {
-        tmp = m;
-        m=n;
-        n=tmp;
+        int cnt = 0;
+        int l = 0, r=1e9+5;
+        while (l+1<r) {
+            cnt = (l + r) >> 1;
+            if (((double)m - (double)a * (double)cnt) / ((double)b - (double)a) >= ((double)b * (double)cnt - (double)n) / ((double)b - (double)a)) l = cnt;
+            else r = cnt;
+        }
+        cout << l;
     }
 
-    int cnt = 0;
-    for (int i=0; i<=m/b; i++){
-        mb = i; //na
-        ma = (m-mb*b)/a;
-        nb = (n-mb*a)/b;
-        if (ma>nb) ma = nb;
-        if (mb+ma>cnt) cnt = ma+mb;
-//        cout << ma+mb << " " << ma << " " << mb;
-//        cout << " " << ma*a+mb*b << " " << ma*b+mb*a << "\n";
-    }
-    cout << cnt;
 }
