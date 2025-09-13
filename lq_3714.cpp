@@ -21,6 +21,7 @@ void euler(int n){
     }
 }
 
+
 signed main(){
     int n, q;
     cin >> n >> q;
