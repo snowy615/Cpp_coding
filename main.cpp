@@ -1,20 +1,29 @@
 #include <iostream>
+#include <bitset>
+#include <vector>
 using namespace std;
-const int N = 1e4;
-int p[N];
-int cnt=1;
-int main(){
-    for (int i=2; i<=1e9; i++){
-        bool t = 0;
-        for (int j=1; j<cnt; j++){
-            if (i%p[j] == 0) t = 1;
-        }
-        if (t ==0) {
-            p[cnt] = i;
-            cnt ++;
+
+const int N = 1e5+5;
+bitset<N> v;
+vector<int> p;
+
+void euler(int n){
+    v[0] = true;
+    v[1] = true;
+    for (int i=2; i<=n; i++){
+        if (!v[i]) p.push_back(i);
+        for (int j=0; j<p.size() && i*p[j] <= n; j++){
+            v[i*p[j]] = true;
+            if (i%p[j] == 0) break;
         }
     }
-    for (int i=1; i<=N; i++){
-        cout << p[i] << ", ";
-    }
+}
+
+
+signed main(){
+    int n;
+    n=1e9;
+    euler(n);
+    for (int i=0; i<p.size(); i++) cout << p[i] << ", ";
+    return 0;
 }
