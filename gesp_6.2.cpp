@@ -27,20 +27,24 @@ signed main(){
     int n=1e5;
     euler(n);
 
-
-
     while (q--){
         int px=0, py=0, cx = 0, cy=0;
         cin >> x >> y;
         while (x!=y){
             if (x>y) {
-                if (x%p[px]==0) {
+                if (px >= p.size()) {
+                    x = 1;
+                    cx ++;
+                }else if (x%p[px]==0) {
                     cx++;
                     x /= p[px];
                 }
                 else px ++;
             }else {
-                if (y%p[py]==0) {
+                if (py >= p.size()){
+                    y=1;
+                    cy++;
+                }else if (y%p[py]==0) {
                     cy++;
                     y /= p[py];
                 }
