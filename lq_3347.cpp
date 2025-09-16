@@ -17,16 +17,20 @@ int qmi(int aa, int bb){
     return mo(cnt);
 }
 
+int inv(int r){
+    return qmi(r, p-2);
+}
 int ncr(int r){
     int res = 1;
     for (int i=n; i>n-r; i--) {
         res = res*i%p;
     }
     for (int i=1; i<=r; i++) {
-        res/=i;
+        res = res*inv(i)%p;
     }
     return mo(res);
 }
+
 
 
 signed main(){
