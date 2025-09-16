@@ -1,4 +1,5 @@
 #include <iostream>
+#define int long long
 using namespace std;
 int n, a, b;
 const int p = 1e9+7;
@@ -27,11 +28,11 @@ int mo(int x) {
     return (x%p+p)%p;
 }
 
-int main(){
+signed main(){
     cin >> n >> a >> b;
     int ans = 1;
     for (int i=1; i<=n; i++) {
         ans = ans*i%p;
     }
-    cout << mo(qmi(2, n)-ncr(ans, a)-ncr(ans, b)-1);
+    cout << mo(mo(mo(qmi(2, n))-mo(ncr(ans, a)))-mo(ncr(ans, b))-1);
 }
