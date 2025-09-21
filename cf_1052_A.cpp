@@ -44,6 +44,7 @@ int main(){
                     res ++;
                 }
 
+
             }
             for (int i=101; i>0; i--){
                 cnt[i] += cnt[i+1];
