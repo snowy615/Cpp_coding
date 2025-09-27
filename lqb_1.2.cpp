@@ -10,10 +10,9 @@ int main(){
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     int n;
     cin >> n;
-    int a, b;
+    all.resize(n);
     for (int i=1; i<=n; i++){
-        cin >> a >> b;
-        all.push_back({a,b});
+        cin >> all[i].first >> all[i].second;
     }
     sort(all.begin(), all.end(), greater<pair<int, int>>());
     int snd_max = all[0].second;
