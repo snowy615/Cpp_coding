@@ -11,7 +11,7 @@ int main(){
     int n;
     cin >> n;
     all.resize(n);
-    for (int i=1; i<=n; i++){
+    for (int i=0; i<n; i++){
         cin >> all[i].first >> all[i].second;
     }
     sort(all.begin(), all.end(), greater<pair<int, int>>());
@@ -19,9 +19,12 @@ int main(){
     int cnt = 1;
     for (int i=1; i<n; i++){
         if (snd_max <= all[i].second || all[i].first == all[0].first) {
+//            cout << i << " " << all[i].first << " " << all[i].second << '\n';
+//            cout << snd_max << "\n\n";
             cnt ++;
-            snd_max = all[i].second;
+            snd_max = max(all[i].second, snd_max);
         }
     }
+//    cout << "\n\n\n";
     cout << cnt;
 }
