@@ -19,7 +19,7 @@ int main(){
     int snd_max = all[0].second;
     int cnt = 1;
     for (int i=1; i<n; i++){
-        if (snd_max < all[i].second) {
+        if (snd_max <= all[i].second || all[i].first == all[0].first) {
             cnt ++;
             snd_max = all[i].second;
         }
