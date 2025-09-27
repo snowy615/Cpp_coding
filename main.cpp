@@ -1,33 +1,28 @@
 #include <iostream>
-#include <string>
 #include <vector>
-#include <sstream> // Required for std::stringstream
+#include <utility>
+#include <algorithm>
+using namespace std;
 
-int main() {
-    std::cout << "Enter some numbers on a single line: ";
+vector<pair<int, int>> all;
 
-    // Step 1: Read the entire line into a string
-    std::string line;
-    std::getline(std::cin, line);
-
-    // Step 2: Create a stringstream from the line
-    std::stringstream ss(line);
-
-    // Step 3: Create a vector to store the numbers
-    std::vector<int> numbers;
-    int temp_num;
-
-    // Step 4: Extract numbers from the stringstream one by one
-    while (ss >> temp_num) {
-        numbers.push_back(temp_num);
+int main(){
+    ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    int n;
+    cin >> n;
+    int a, b;
+    for (int i=1; i<=n; i++){
+        cin >> a >> b;
+        all.push_back({a,b});
     }
-
-    // Now, you can use the vector of numbers
-    std::cout << "\nYou entered " << numbers.size() << " numbers:" << std::endl;
-    for (int num : numbers) {
-        std::cout << num << " ";
+    sort(all.begin(), all.end(), greater<pair<int, int>>());
+    int snd_max = all[0].second;
+    int cnt = 1;
+    for (int i=1; i<n; i++){
+        if (snd_max <= all[i].second) {
+            cnt ++;
+            snd_max = all[i].second;
+        }
     }
-    std::cout << std::endl;
-
-    return 0;
+    cout << cnt;
 }
