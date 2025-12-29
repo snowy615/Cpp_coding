@@ -12,4 +12,5 @@ signed main(){
         else n /= 2;
         cout << n << " ";
     }
+    return 0;
 }
