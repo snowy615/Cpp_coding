@@ -22,10 +22,11 @@ int main(){
         a=v[i].first;
         b=v[i].second;
         t += b;
+        while (pq.empty()==false && pq.top()<=a) pq.pop();
         if (pq.size()<n) pq.push(a+b);
         else{
-            ll enter = pq.top()-a;
-            t += enter;
+            ll enter = pq.top();
+            t += enter-a;
             pq.pop();
             pq.push(enter+b);
         }
