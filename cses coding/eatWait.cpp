@@ -8,6 +8,8 @@ using namespace std;
 using ll = long long;
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     priority_queue<ll,vector<ll>,greater<ll>>pq;
     vector<pair<ll, ll>> v;
     ll t = 0;
