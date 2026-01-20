@@ -1,24 +1,24 @@
 #include <iostream>
-#include <vector>
+#include <string>
 #include <algorithm>
+#include <vector>
 using namespace std;
-int n;
 
-void solveHanoi(int total, int source, int target, int auxiliary){
-    if (total==0) return;
-    solveHanoi(total-1, source, auxiliary, target);
-    cout << source << " " << target << "\n";
-    solveHanoi(total-1, auxiliary, target, source);
-
-}
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);
+    
+    string s;
+    cin >> s;
+    sort(s.begin(), s.end());
+    vector<string> results;
+    do {
+        results.push_back(s);
+    } while (next_permutation(s.begin(), s.end()));
 
-    cin >> n;
-    cout << (1<<n) - 1 << "\n";
-    solveHanoi(n, 1, 3, 2);
+    cout << results.size() << "\n";
+    for (auto &r:results) cout << r << "\n";
+
     return 0;
-
 }
