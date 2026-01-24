@@ -1,33 +1,35 @@
 #include <iostream>
-#include <algorithm>
+#include <string>
 #include <vector>
-#include <cmath>
+#include <algorithm>
 using namespace std;
-using ll = long long;
-int n;
-vector<ll> v;
-ll tsum = 0;
 
-ll solve(int idx, ll cur_sum){
-    if (idx == n){
-        ll group2_sum = tsum - cur_sum;
-        return abs(cur_sum-group2_sum);
+vector<string> board(8);
+vector<bool> d1(15, false), d2(15, false);
+vector<bool> col(8, false);
+int solution = 0;
+
+void search(int row){
+    if (row == 8) {
+        solution++;
+        return;
     }
-    ll diff1 = solve(idx+1, cur_sum + v[idx]);
-    ll diff2 = solve(idx+1, cur_sum);
-    return min(diff1, diff2);
+
+    for (int c = 0; c<8; c++){
+        if (col[c] || d1[c+row] || d2[c-row+7] || board[row][c]=='*') continue;
+        col[c] = d1[c+row] = d2[c-row+7] = true;
+        search(row+1);
+        col[c] = d1[c+row] = d2[c-row+7] = false;
+    }
 }
+
+
 int main(){
-    ios_base::sync_with_stdio(false);
+    ios_base::sync_with_stdio(0);
     cin.tie(0);
-    
-    cin >> n;
-    v.resize(n);
-    for (int i = 0; i<n; i++){
-        cin >> v[i];
-        tsum += v[i];
-    }
-    cout << solve(0,0) << "\n";
-    
-    return 0;
+    for (int i=0; i<8; i++) cin >> board[i];
+    search(0);
+    cout << solution << "\n";
+
+
 }
