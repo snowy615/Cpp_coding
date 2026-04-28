@@ -28,6 +28,7 @@ int main(){
 
     sort(N_cows.begin(), N_cows.end(), [](const Cow& a, const Cow& b) {return a.x < b.x;});
 
+
     vector<int> ans(nn, -1);
 
     for (const auto& e: E_cows){
