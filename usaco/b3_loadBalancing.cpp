@@ -30,16 +30,16 @@ int main(){
 
     int mcows = n;
     for (int i = 0; i < x.size(); i++){
-        int a = x[i] + 1;
+        int a = x[i] + 1; //vertical fence
         //a = above, b=below, l = left, r=right
         int al = 0, ar = 0, bl = 0, br = 0;
 
-        for (int k = 0; k < n; k++){
+        for (int k = 0; k < n; k++){ //horizontal fence at bottom
             if (cows[k].x < a) al++;
             else ar ++;
         }
 
-        for (int j = 0; j < n; j++){
+        for (int j = 0; j < n; j++){ //move horiztonal fence
             if (cows[j].x < a){
                 al --;
                 bl ++;
@@ -48,7 +48,7 @@ int main(){
                 br++;
             }
 
-            if (j == n-1 || cows[j].y != cows[j+1].y){
+            if (j == n-1 || cows[j].y != cows[j+1].y){ //check safe
                 int cur_max = max({al, ar, bl, br});
                 if (cur_max < mcows) mcows = cur_max;
             }
