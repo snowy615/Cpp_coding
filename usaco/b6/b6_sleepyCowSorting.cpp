@@ -5,6 +5,9 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
+    freopen("sleepy.in", "r", stdin);
+    freopen("sleepy.out", "w", stdout);
+
     int n;
     cin >> n;
     vector<int> p(n);
